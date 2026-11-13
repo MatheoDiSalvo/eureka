@@ -1,0 +1,29 @@
+name: Vérifications Eureka
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le projet
+        uses: actions/checkout@v7.0.1
+
+      - name: Préparer Node.js
+        uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+
+      - name: Vérifier la syntaxe JavaScript
+        run: |
+          for file in website/*.js client/*.js client/*.cjs; do
+            node --check "$file"
+          done
+
+      - name: Tester les parcours de démonstration
+        run: node client/tests.cjs

@@ -1,0 +1,25 @@
+# Fichiers locaux, caches et dependances
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Configuration personnelle et secrets
+.env
+.env.*
+!.env.example
+.codex/
+.agents/
+.aws/
+.vscode/
+.idea/
+
+# Archives et sorties temporaires
+coverage/
+test-results/
+playwright-report/

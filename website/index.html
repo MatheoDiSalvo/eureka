@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+
+  <!-- ============================================================
+       01. Metadonnees, styles et scripts
+       ============================================================ -->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#9457e7">
+    <meta name="description" content="Eureka Corporation — recherche appliquée et solutions technologiques pour entreprises et particuliers.">
+    <title>Eureka — Des idées aux solutions</title>
+    <link rel="stylesheet" href="https://use.typekit.net/tpf5hvt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="services.js" defer></script>
+    <script src="i18n.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="navigation.js" defer></script>
+    <script src="hero.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <!-- ============================================================
+         02. Header : logo, langue et contact
+         ============================================================ -->
+
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Eureka, accueil">
+        <img src="../images/Eureka25.png" alt="Eureka" class="brand-logo">
+      </a>
+      <div class="header-actions">
+        <a class="client-entry" href="../client/index.html">Espace client</a>
+        <label class="language-picker">
+          <span class="sr-only" id="language-label">Langue</span>
+          <span class="language-code" id="language-code" aria-hidden="true">FR</span>
+          <select id="language-select" aria-labelledby="language-label">
+            <option value="en-US" lang="en-US">EN — English (US)</option>
+            <option value="fr-FR" lang="fr-FR" selected>FR — Français (France)</option>
+            <option value="es-ES" lang="es-ES">ES — Español (España)</option>
+            <option value="de-DE" lang="de-DE">DE — Deutsch</option>
+            <option value="ja-JP" lang="ja-JP">JP — 日本語</option>
+            <option value="zh-CN" lang="zh-CN">CH — 简体中文</option>
+          </select>
+        </label>
+        <a class="button button-small" href="#demande">
+          Parlons de votre projet
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         03. Navigation fixe et menu mobile
+         ============================================================ -->
+
+    <div class="scroll-nav" id="scroll-nav" aria-hidden="true" inert>
+      <div class="scroll-nav-inner">
+        <a class="wordmark" href="#contenu" aria-label="Eureka, accueil">
+          <img src="../images/EurekaRes.png" alt="Eureka" class="brand-logo">
+        </a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Navigation principale" aria-expanded="false" aria-controls="scroll-nav-links">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="scroll-nav-links" id="scroll-nav-links" aria-label="Navigation principale">
+          <a href="#services">Nos services</a>
+          <a href="#approche">Notre approche</a>
+          <a href="#histoire">Eureka depuis 1962</a>
+          <a class="button button-small" href="#demande">
+            Parlons de votre projet
+            <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <main id="contenu">
+
+      <!-- ============================================================
+           04. Accueil et illustration
+           ============================================================ -->
+
+      <section class="hero section-wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot"></span>
+            RECHERCHE. TECHNOLOGIE. APPLICATIONS.
+          </p>
+          <h1>
+            <span class="hero-title-line">Les grandes idées.</span>
+            <span class="hero-title-line">Dans votre</span>
+            <em class="hero-title-line">quotidien.</em>
+          </h1>
+          <p class="intro">De la recherche avancée aux solutions concrètes, Eureka accompagne les entreprises et les particuliers dans leurs projets technologiques.</p>
+          <a class="button" href="#services">
+            Explorer nos services
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-grid"></div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+            <div class="art-core" id="hero-value">Innovation</div>
+            <span class="art-caption">EUREKA / APPLIED RESEARCH</span>
+            <span class="art-index">FIG. 01 — DE L’IDÉE À L’APPLICATION</span>
+          </div>
+          <p class="sr-only" id="hero-values-summary">Innovation, Précision, Connexion, Accompagnement.</p>
+          <button class="hero-motion-toggle" id="hero-motion-toggle" type="button" hidden>
+            <span id="hero-motion-icon" aria-hidden="true">Ⅱ</span>
+            <span id="hero-motion-label">Mettre en pause</span>
+          </button>
+        </div>
+        <div class="hero-footer">
+          <span>UN HÉRITAGE SCIENTIFIQUE, UNE VISION CONCRÈTE.</span>
+          <span>ENTREPRISES & PARTICULIERS ↘</span>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           05. Catalogue et filtres de services
+           ============================================================ -->
+
+      <section class="services section-wrap" id="services">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / NOS EXPERTISES</p>
+            <h2>
+              Une solution commence
+              <br>
+              par votre besoin.
+            </h2>
+          </div>
+          <p>Explorez une première sélection de services imaginés à partir des expertises d’Eureka.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrer les services par public">
+          <button type="button" class="filter active" data-audience="all" aria-pressed="true">Tous les services</button>
+          <button type="button" class="filter" data-audience="entreprise" aria-pressed="false">Je suis une entreprise</button>
+          <button type="button" class="filter" data-audience="particulier" aria-pressed="false">Je suis un particulier</button>
+        </div>
+        <p class="sr-only" id="filter-status" role="status"></p>
+        <div class="service-grid" id="service-grid"></div>
+        <noscript>
+          <p>Activez JavaScript pour explorer le catalogue et préparer une demande.</p>
+        </noscript>
+        <p class="catalog-note">Catalogue de démonstration — offres et périmètres à définir ensemble.</p>
+      </section>
+
+      <!-- ============================================================
+           06. Notre approche
+           ============================================================ -->
+
+      <section class="approach section-wrap" id="approche">
+        <div>
+          <p class="eyebrow">02 / NOTRE APPROCHE</p>
+          <h2>
+            La technologie avance.
+            <br>
+            Votre projet aussi.
+          </h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>Comprendre</h3>
+              <p>Vous nous présentez votre contexte, vos besoins et vos objectifs.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>Concevoir</h3>
+              <p>Nous identifions une réponse adaptée à votre usage.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>Accompagner</h3>
+              <p>Nous définissons ensemble les étapes de votre projet.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============================================================
+           07. Histoire et chronologie
+           ============================================================ -->
+
+      <section class="history section-wrap" id="histoire">
+        <p class="eyebrow">03 / L’HÉRITAGE EUREKA</p>
+        <div class="history-heading">
+          <h2>
+            Depuis 1962,
+            <br>
+            une idée d’avance.
+          </h2>
+          <p>Née au sein du National Institute for Advanced Research, Eureka est devenue une corporation indépendante en 1981. Son histoire relie recherche informatique, microélectronique et réseaux de communication.</p>
+        </div>
+        <div class="timeline">
+          <div>
+            <strong>1962</strong>
+            <span>Création du NIAR</span>
+          </div>
+          <div>
+            <strong>1973</strong>
+            <span>Naissance d’Eureka Corporation</span>
+          </div>
+          <div>
+            <strong>1981</strong>
+            <span>Une corporation indépendante</span>
+          </div>
+          <div>
+            <strong>30+</strong>
+            <span>Établissements dans le monde</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           08. Formulaire et gestion du brouillon
+           ============================================================ -->
+
+      <section class="request section-wrap" id="demande">
+        <div>
+          <p class="eyebrow">04 / VOTRE PROJET</p>
+          <h2>
+            Et si on partait
+            <br>
+            de votre idée ?
+          </h2>
+          <p>Décrivez votre besoin pour préparer votre première prise de contact.</p>
+          <p class="prototype-note">Prototype : ce formulaire conserve un brouillon sur cet appareil. Aucune demande n’est envoyée à Eureka.</p>
+        </div>
+        <form id="request-form">
+          <div class="form-row">
+            <label>
+              Vous êtes
+              <select name="audience" required>
+                <option value="entreprise">Une entreprise</option>
+                <option value="particulier">Un particulier</option>
+              </select>
+            </label>
+            <label>
+              Service souhaité
+              <select name="service" id="service-select" required>
+                <option value="">Choisir un service</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Votre nom
+              <input name="name" autocomplete="name" maxlength="100" required>
+            </label>
+            <label>
+              Votre adresse e-mail
+              <input name="email" type="email" autocomplete="email" maxlength="254" required>
+            </label>
+          </div>
+          <label>
+            Votre besoin
+            <textarea name="message" rows="4" minlength="10" maxlength="3000" placeholder="Contexte, objectifs, questions…" required></textarea>
+          </label>
+          <button class="button" type="submit">
+            Enregistrer mon brouillon
+            <span aria-hidden="true">↗</span>
+          </button>
+          <div class="form-actions">
+            <button class="text-button" id="download-draft" type="button">Télécharger le brouillon (.json)</button>
+            <button class="text-button" id="clear-draft" type="button">Effacer le brouillon</button>
+          </div>
+          <p id="form-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         09. Footer
+         ============================================================ -->
+
+    <footer class="site-footer section-wrap">
+      <a class="wordmark" href="#" aria-label="Eureka, accueil">
+        <img src="../images/Eureka25.png" alt="Eureka" class="brand-logo">
+      </a>
+      <p>© 2026 Eureka Corporation · Société de droit du Delaware · Tous droits réservés.</p>
+      <a href="#contenu">Retour en haut ↑</a>
+    </footer>
+  </body>
+</html>

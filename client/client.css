@@ -1,0 +1,1471 @@
+/* ==========================================================================
+   01. Palette, typographie et fondations
+   ========================================================================== */
+
+:root {
+  --apricot: #fcbf75;
+  --peach: #e3987c;
+  --fig: #9457e7;
+  --fig-dark: #6432a9;
+  --fig-light: #f0e8fc;
+  --paper: #f7f7fb;
+  --surface: #fff;
+  --ink: #241c30;
+  --muted: #716a7b;
+  --line: #e9e6ee;
+  --font: "neighbor", "Noto Sans", Arial, sans-serif;
+  --body: "Noto Sans", Arial, sans-serif;
+  --sidebar: 258px;
+}
+
+html:lang(ja-JP) {
+  --font: "neighbor", "Noto Sans JP", "Noto Sans", "Yu Gothic", sans-serif;
+  --body: "Noto Sans JP", "Noto Sans", "Yu Gothic", sans-serif;
+}
+
+html:lang(zh-CN) {
+  --font: "neighbor", "Noto Sans SC", "Noto Sans", "Microsoft YaHei", sans-serif;
+  --body: "Noto Sans SC", "Noto Sans", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--body);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button, a, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--fig);
+  outline-offset: 4px;
+}
+
+svg {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--font);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(30px, 3.1vw, 43px);
+  letter-spacing: -1.4px;
+  line-height: 1.16;
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -.4px;
+}
+
+h3 {
+  font-size: 20px;
+  letter-spacing: -.3px;
+}
+
+p {
+  line-height: 1.75;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only, .skip-link:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 300;
+  padding: 15px;
+  background: var(--surface);
+}
+
+.muted, .small {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   02. Barre latérale et compte
+   ========================================================================== */
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar);
+  padding: 32px 20px 20px;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  overflow-y: auto;
+}
+
+.brand {
+  display: block;
+  width: 183px;
+  margin: 0 8px 23px;
+  overflow: hidden;
+}
+
+.brand img {
+  display: block;
+  width: 124%;
+  height: auto;
+  margin-left: -12%;
+}
+
+.workspace-label {
+  margin: 0 12px 22px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+#primary-nav {
+  display: grid;
+  gap: 7px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 48px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav-item:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.nav-item.selected {
+  background: var(--fig-light);
+  color: var(--fig-dark);
+  font-weight: 600;
+}
+
+.nav-spark {
+  margin-left: auto;
+  color: var(--fig-dark);
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 45px;
+}
+
+.demo-card {
+  padding: 17px 15px 12px;
+  border: 1px solid #f0dfc6;
+  border-radius: 12px;
+  background: #fff6e9;
+}
+
+.demo-card strong {
+  font-size: 11px;
+}
+
+.demo-card p {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #786047;
+}
+
+.demo-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #ad6815;
+}
+
+.website-link {
+  display: block;
+  margin: 22px 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.website-link:hover {
+  text-decoration: underline;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 6px 0;
+  border-top: 1px solid var(--line);
+}
+
+.profile-link > span:last-child {
+  min-width: 0;
+}
+
+.profile-link strong, .profile-link small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-link strong {
+  font-size: 12px;
+}
+
+.profile-link small {
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--fig-light);
+  color: var(--fig-dark);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   03. En-tête et structure de l’application
+   ========================================================================== */
+
+.app-shell {
+  margin-left: var(--sidebar);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 82px;
+  padding: 18px 40px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+}
+
+.breadcrumb {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.breadcrumb > span {
+  margin: 0 12px;
+  color: #b6afbf;
+}
+
+.breadcrumb strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.demo-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: #fff1da;
+  color: #805012;
+  font-size: 9px;
+  letter-spacing: .8px;
+  font-weight: 600;
+}
+
+.locale-control select {
+  max-width: 165px;
+  padding: 9px 22px 9px 10px;
+  font-size: 11px;
+}
+
+#workspace {
+  width: 100%;
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 38px 40px 50px;
+  outline: none;
+  flex: 1;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
+}
+
+.page-heading {
+  margin-bottom: 28px;
+}
+
+.page-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.demo-notice, .inline-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 10px;
+  padding: 14px 17px;
+  background: #f0ecf8;
+  color: #655173;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.demo-notice svg {
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+}
+
+.app-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* ==========================================================================
+   04. Boutons, formulaires et composants communs
+   ========================================================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-height: 44px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.primary {
+  background: var(--fig);
+  color: #08030d;
+}
+
+.primary:hover {
+  background: var(--fig-dark);
+  color: #fff;
+}
+
+.secondary {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.secondary:hover {
+  border-color: var(--fig);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  color: var(--fig-dark);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.text-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--surface);
+  font-size: 23px;
+}
+
+.menu-toggle, .sidebar-close {
+  display: none;
+}
+
+input, textarea, select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #d6d0df;
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--surface);
+  line-height: 1.5;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #81788b;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.stack-form {
+  display: grid;
+  gap: 20px;
+  margin-top: 23px;
+}
+
+.stack-form label {
+  display: grid;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.stack-form .button {
+  justify-self: start;
+}
+
+.panel {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  min-width: 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 30px 0 18px;
+}
+
+.section-title a {
+  color: var(--fig-dark);
+  font-size: 11px;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* ==========================================================================
+   05. Tableau de bord et cartes des services
+   ========================================================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.stat-card {
+  position: relative;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface);
+}
+
+.stat-card p {
+  margin: 0 48px 15px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stat-card > strong {
+  display: block;
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 39px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.stat-card > small {
+  display: block;
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.stat-icon {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  color: #866022;
+  background: #fff0d8;
+}
+
+.stat-icon.peach {
+  color: #8a4b37;
+  background: #fcece5;
+}
+
+.stat-icon.violet {
+  color: var(--fig-dark);
+  background: var(--fig-light);
+}
+
+.service-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.dashboard-services {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.all-services {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.product-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--fig-light);
+  color: var(--fig-dark);
+}
+
+.product-icon.network {
+  background: #fff0d8;
+  color: #906219;
+}
+
+.product-icon.devices {
+  background: #fce8df;
+  color: #93533b;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 9px;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.status-badge > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.status-badge.active {
+  background: #eaf3ed;
+  color: #356a48;
+}
+
+.status-badge.pending {
+  background: #fff0d8;
+  color: #80551a;
+}
+
+.status-badge.suspended {
+  background: #eeeaf4;
+  color: #6a557c;
+}
+
+.service-id {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.service-card h3 {
+  margin: 9px 0;
+}
+
+.service-card > p {
+  margin: 0 0 23px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.service-metric {
+  margin-top: auto;
+}
+
+.metric-label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 7px;
+  margin-bottom: 9px;
+  font-size: 10px;
+}
+
+.metric-label > span {
+  color: var(--muted);
+}
+
+.metric-label strong {
+  font-weight: 500;
+}
+
+progress {
+  display: block;
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  border: none;
+  border-radius: 10px;
+  background: #eeebf3;
+  accent-color: var(--fig);
+}
+
+progress::-webkit-progress-bar {
+  background: #eeebf3;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background: var(--fig);
+  border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+  background: var(--fig);
+  border-radius: 10px;
+}
+
+.paused-progress {
+  opacity: .5;
+}
+
+.usage-caption {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 15px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-size: 11px;
+  text-align: left;
+}
+
+.card-link:hover {
+  color: var(--fig-dark);
+}
+
+.card-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.dashboard-bottom {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.activity-panel .section-title {
+  margin: 0 0 8px;
+}
+
+.activity-panel > p {
+  margin: 0;
+  font-size: 11px;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.activity-list li {
+  display: flex;
+  gap: 13px;
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
+
+.activity-dot {
+  width: 7px;
+  height: 7px;
+  margin-top: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--fig);
+}
+
+.activity-list p {
+  margin: 0 0 5px;
+  font-size: 11px;
+}
+
+.activity-list time {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.help-panel {
+  position: relative;
+  padding: 28px;
+  border: 1px solid #e4d7fa;
+  border-radius: 14px;
+  background: #eee5fd;
+}
+
+.help-star {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--fig-dark);
+  font-size: 30px;
+}
+
+.help-panel p {
+  color: #665079;
+  font-size: 12px;
+}
+
+.help-panel .text-link {
+  display: flex;
+  margin-top: 8px;
+}
+
+.service-toolbar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.search-control {
+  flex: 1;
+}
+
+.service-toolbar > label:last-child {
+  max-width: 220px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 35px 15px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+.empty-state svg {
+  width: 33px;
+  height: 33px;
+}
+
+/* ==========================================================================
+   06. Fiche de service
+   ========================================================================== */
+
+dialog {
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100dvh - 40px);
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 30px 100px #241c3030;
+}
+
+dialog::backdrop {
+  background: #21162d70;
+  backdrop-filter: blur(4px);
+}
+
+.dialog-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+dialog h2 {
+  margin: 8px 0;
+  font-size: 29px;
+}
+
+.dialog-metric {
+  margin: 28px 0;
+}
+
+.detail-list {
+  margin: 0 0 26px;
+}
+
+.detail-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.detail-list dt {
+  color: var(--muted);
+}
+
+.detail-list dd {
+  margin: 0;
+  text-align: right;
+}
+
+.dialog-support {
+  display: flex;
+  margin-top: 15px;
+}
+
+/* ==========================================================================
+   07. Assistant de démonstration
+   ========================================================================== */
+
+.chat-panel {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.chat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 17px 24px;
+  border-bottom: 1px solid var(--line);
+  background: #fcfaff;
+}
+
+.chat-top > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--fig-dark);
+}
+
+.quiet-button {
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 10px;
+  text-decoration: underline;
+}
+
+.chat-feed {
+  height: clamp(300px, 43vh, 540px);
+  padding: 28px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.chat-message > div {
+  max-width: min(85%, 670px);
+}
+
+.chat-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--fig-light);
+  color: var(--fig-dark);
+  font-size: 13px;
+}
+
+.chat-message strong {
+  display: block;
+  margin: 1px 0 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.chat-message p {
+  margin: 0;
+  padding: 15px 17px;
+  border-radius: 0 12px 12px;
+  background: var(--paper);
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.chat-message.user {
+  flex-direction: row-reverse;
+}
+
+.chat-message.user p {
+  background: var(--fig-light);
+  border-radius: 12px 0 12px 12px;
+}
+
+.chat-message.user strong {
+  text-align: right;
+}
+
+.suggestions {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  padding: 0 28px 20px;
+}
+
+.suggestions button {
+  padding: 9px 12px;
+  border: 1px solid #e1d6f4;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--fig-dark);
+  font-size: 10px;
+  text-align: left;
+}
+
+.suggestions button:hover {
+  background: var(--fig-light);
+}
+
+.chat-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--line);
+}
+
+.chat-composer textarea {
+  min-height: 70px;
+  max-height: 180px;
+  font-size: 12px;
+}
+
+.chat-composer .button {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   08. Support et profil
+   ========================================================================== */
+
+.support-layout, .account-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.tickets-panel h2 {
+  margin-bottom: 20px;
+}
+
+.ticket {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.ticket summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.ticket summary::after {
+  content: '+';
+  color: var(--fig-dark);
+}
+
+.ticket[open] summary::after {
+  content: '−';
+}
+
+.ticket summary > span:first-child {
+  flex: 1;
+  min-width: 130px;
+}
+
+.ticket summary strong, .ticket summary small {
+  display: block;
+}
+
+.ticket summary strong {
+  margin-top: 6px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.ticket summary small, .ticket-service {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.ticket-message {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+
+.account-summary {
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid #e4d7fa;
+  background: var(--fig-light);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.avatar.large {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 22px;
+  border-radius: 22px;
+  background: var(--surface);
+  font-size: 24px;
+}
+
+.account-summary h2 {
+  font-size: 27px;
+}
+
+.account-summary > .small {
+  margin-top: 28px;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  max-width: min(480px, calc(100vw - 48px));
+  padding: 16px 21px;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 10px 35px #241c3025;
+  font-size: 12px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   09. Responsive et écritures non latines
+   ========================================================================== */
+
+#locale-select option:lang(ja-JP) {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+#locale-select option:lang(zh-CN) {
+  font-family: "Noto Sans SC", sans-serif;
+}
+
+html:lang(ja-JP) h1, html:lang(zh-CN) h1 {
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: clamp(25px, 2.7vw, 36px);
+}
+
+html:lang(ja-JP) h2, html:lang(zh-CN) h2,
+html:lang(ja-JP) h3, html:lang(zh-CN) h3 {
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 1180px) {
+  :root {
+    --sidebar: 230px;
+  }
+
+  .sidebar {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  #workspace {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .app-header {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .dashboard-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-services .service-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .dashboard-bottom, .support-layout, .account-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar-close {
+    display: inline-grid;
+    position: absolute;
+    top: 22px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .sidebar {
+    width: 260px;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 220ms ease, visibility 220ms;
+  }
+
+  .menu-open .sidebar {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .sidebar-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    border: 0;
+    background: #241c3050;
+  }
+
+  .menu-open {
+    overflow: hidden;
+  }
+
+  .app-shell {
+    margin-left: 0;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+  }
+
+  .app-header {
+    min-height: 72px;
+    padding: 14px 24px;
+  }
+
+  .header-left, .header-right {
+    gap: 12px;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+  }
+
+  .breadcrumb > span {
+    margin: 0 6px;
+  }
+
+  #workspace {
+    padding-top: 30px;
+  }
+
+  .app-footer {
+    margin: 0 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    gap: 10px;
+    padding: 12px 17px;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .locale-control select {
+    max-width: 150px;
+    font-size: 10px;
+  }
+
+  .header-avatar {
+    width: 33px;
+    height: 33px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+  #workspace {
+    padding: 27px 17px 35px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .page-heading > p:last-child {
+    font-size: 12px;
+  }
+
+  .stats-grid {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 17px 12px;
+  }
+
+  .stat-icon {
+    display: none;
+  }
+
+  .stat-card p {
+    margin: 0 0 12px;
+    font-size: 9px;
+    min-height: 32px;
+  }
+
+  .stat-card > strong {
+    font-size: 30px;
+  }
+
+  .stat-card > small {
+    font-size: 9px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .section-title {
+    gap: 15px;
+  }
+
+  .section-title a {
+    max-width: 120px;
+  }
+
+  .service-toolbar {
+    flex-direction: column;
+  }
+
+  .service-toolbar > label:last-child {
+    max-width: none;
+  }
+
+  .panel, .service-card, .help-panel {
+    padding: 21px;
+  }
+
+  .chat-top, .chat-feed {
+    padding: 18px;
+  }
+
+  .chat-message {
+    gap: 8px;
+  }
+
+  .chat-message > div {
+    max-width: calc(100% - 42px);
+  }
+
+  .chat-message p {
+    padding: 12px;
+  }
+
+  .suggestions {
+    padding: 0 18px 18px;
+  }
+
+  .chat-composer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 17px;
+  }
+
+  .chat-composer .button {
+    align-self: flex-end;
+  }
+
+  .app-footer {
+    margin: 0 17px;
+  }
+
+  .detail-list > div {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .detail-list dd {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
